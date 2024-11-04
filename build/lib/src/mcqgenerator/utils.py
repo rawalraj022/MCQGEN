@@ -6,7 +6,7 @@ import traceback      # importing traceback is used to print the error
 def read_file(file):    # this function is used to read the file
     if file.name.endswith(".pdf"):     # checking whether the file is pdf or not
         try:                          # if the file is pdf then it will read the file
-            pdf_reader=PyPDF2.PdfReader(file)   # pdf_reader is used to read the pdf file
+            pdf_reader=PyPDF2.PdfFileReader(file)   # pdf_reader is used to read the pdf file
             text=""                                # text is used to store the text from the pdf file
             for page in pdf_reader.pages:         # for loop is used to extract the text from the pdf file
                 text+=page.extract_text()        # text is used to store the text from the pdf file

@@ -13,7 +13,7 @@ from src.mcqgenerator.logger import logging
 # from logger = to import logging
 
 #importing necessary packages from langchain
-from langchain_community.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
 #from chat_models = to import ChatOpenAI
 from langchain.prompts import PromptTemplate
 #from prompts = to import PromptTemplate
@@ -57,7 +57,7 @@ quiz_generation_prompt = PromptTemplate(
     template=template)
 
 
-quiz_chain=LLMChain(llm=llm,prompt=quiz_generation_prompt,output_key="quiz",verbose=True)
+quiz_chain=LLMChain(llm=llm,prompts=quiz_generation_prompt,output_key="quiz",verbose=True)
 # we use llm chain to connecting the several component
 # We have two component first is 'llm' and second one is 'prompt'
 # Connecting both component two component we use 'llm chain'
